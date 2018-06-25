@@ -1,0 +1,16 @@
+[package]
+name = "power-warn"
+version = "0.1.0"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/yoshuawuyts/power-warn"
+documentation = "https://docs.rs/power-warn"
+description = "Warn on low power level"
+authors = ["Yoshua Wuyts <yoshuawuyts@gmail.com>"]
+readme = "README.md"
+
+[dependencies]
+notify-rust = "3.4.2"
+structopt = "0.2.10"
+failure = "0.1.1"
+
+[dev-dependencies]
