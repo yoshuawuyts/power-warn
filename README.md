@@ -2,13 +2,24 @@
 [![crates.io version][1]][2] [![build status][3]][4]
 [![downloads][5]][6] [![docs.rs docs][7]][8]
 
-Warn on low power level.
+Automatically send a notification every 5 minutes when your computer is running
+low on power.
 
 - [Documentation][8]
 - [Crates.io][2]
 
 ## Usage
-```rust
+```txt
+power-warn 1.0.0
+Yoshua Wuyts <yoshuawuyts@gmail.com>
+Warn on low power level
+
+USAGE:
+    power-warn
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
 ```
 
 ## License
