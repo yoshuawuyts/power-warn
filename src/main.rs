@@ -29,7 +29,7 @@ fn main() -> Result<(), Error> {
         send_notification(level, NotificationUrgency::Normal);
       }
     }
-    thread::sleep(Duration::from_secs(60 * 4));
+    thread::sleep(Duration::from_secs(60 * 8));
   }
 }
 
