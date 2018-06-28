@@ -19,14 +19,23 @@ use structopt::StructOpt;
 struct Opts {}
 
 fn main() -> Result<(), Error> {
-  let _args = Opts::from_args();
+  let _ = Opts::from_args();
   loop {
-    let level = get_power_level()?;
-    if level < 20 {
-      send_notification(level);
+    if is_using_battery()? {
+      let level = get_power_level()?;
+      if level < 5 {
+        send_notification(level, NotificationUrgency::Critical);
+      } else if level < 20 {
+        send_notification(level, NotificationUrgency::Normal);
+      }
     }
     thread::sleep(Duration::from_secs(60 * 4));
   }
+}
+
+fn is_using_battery() -> Result<bool, Error> {
+  let file = read_to_string("/sys/class/power_supply/BAT0/status")?;
+  Ok(file == "Discharging\n")
 }
 
 fn get_power_level() -> Result<u16, Error> {
@@ -36,10 +45,10 @@ fn get_power_level() -> Result<u16, Error> {
   Ok(file.parse::<u16>()?)
 }
 
-fn send_notification(num: u16) {
+fn send_notification(num: u16, level: NotificationUrgency) {
   Notification::new()
     .summary("Low Battery")
-    .urgency(NotificationUrgency::Normal)
+    .urgency(level)
     .body(&format!("{}% of battery remaining", num))
     .show()
     .unwrap();
