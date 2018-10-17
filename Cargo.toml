@@ -10,7 +10,7 @@ readme = "README.md"
 
 [dependencies]
 notify-rust = "3.4.3"
-structopt = "0.2.10"
+structopt = "0.2.12"
 failure = "0.1.1"
 
 [dev-dependencies]
