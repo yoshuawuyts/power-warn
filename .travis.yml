@@ -4,7 +4,9 @@ rust:
 
 before_script: |
   rustup component add rustfmt-preview &&
-  rustup component add clippy-preview
+  rustup component add clippy-preview &&
+  sudo apt-get update &&
+  sudo apt-get install libdbus-1-dev
 script: |
   cargo fmt -- --check &&
   cargo clippy -- -D clippy &&
