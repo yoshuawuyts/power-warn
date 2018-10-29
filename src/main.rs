@@ -5,7 +5,6 @@
 
 extern crate failure;
 extern crate notify_rust;
-#[macro_use]
 extern crate structopt;
 
 use failure::Error;
