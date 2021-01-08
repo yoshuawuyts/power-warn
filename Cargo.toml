@@ -9,7 +9,7 @@ authors = ["Yoshua Wuyts <yoshuawuyts@gmail.com>"]
 readme = "README.md"
 
 [dependencies]
-notify-rust = "3.6.3"
+notify-rust = "4.1.1"
 structopt = "0.3.21"
 failure = "0.1.8"
 
