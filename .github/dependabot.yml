@@ -1,0 +1,13 @@
+version: 2
+updates:
+- package-ecosystem: cargo
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+    timezone: Europe/Berlin
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: notify-rust
+    versions:
+    - 4.2.2
